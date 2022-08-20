@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki210</title>
+    <link rel="icon" href="osi.png">
+    <style>
+        body {
+            background-color: rgb(129, 134, 134);
+        }
+
+        a:link, a:visited {
+            background-color: silver;
+            color: rgb(64, 107, 224);
+            text-align: center;
+            text-decoration: none;
+
+        }
+
+        a:hover, a:active {
+            background-color: bisque;
+        }
+    
+    </style>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+    <script>
+        let cX, cY, rH, rM, rS, dC
+        function setup() {
+            createCanvas(window.innerWidth, window.innerHeight); noStroke()
+            let rC = min(width, height) / 2; cx = width / 2; cy = height / 2;
+            rS = rC * 0.72; rM = rC * 0.60; rH = rC * 0.50; dC = rC * 1.8;
+        }
+        function draw() {
+            let h = map(hour() + norm(minute(), 0, 60), 0, 24, 0, TWO_PI * 2) - HALF_PI;
+            let m = map(minute() + norm(second(), 0, 60), 0, 60, 0, TWO_PI) - HALF_PI;
+            let s = map(second(), 0, 60, 0, TWO_PI) - HALF_PI;
+
+            noStroke(); fill(59, 66, 82); circle(cx, cy, dC);
+
+            stroke(216, 222, 233);
+            strokeWeight(2); line(cx, cy, cx + cos(s) * rS, cy + sin(s) * rS);
+            strokeWeight(4); line(cx, cy, cx + cos(m) * rM, cy + sin(m) * rM);
+            strokeWeight(8); line(cx, cy, cx + cos(h) * rH, cy + sin(h) * rH);
+        }
+
+    </script>
+
+    <p style="text-align: center;"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Hoc vien ba
+            vuong mobile</a></p>
+</body>
+
+</html>
